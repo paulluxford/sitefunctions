@@ -11,6 +11,13 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly
 }
 
+// Register Year Shortcode
+function year_shortcode () {
+$year = date_i18n ('Y');
+return $year;
+}
+add_shortcode ('year', 'year_shortcode');
+
 // Add Google Analytics Script
 add_action('wp_head', 'wpb_add_googleanalytics');
 function wpb_add_googleanalytics() { ?>
